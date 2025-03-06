@@ -2,6 +2,7 @@
 import { ArrowRight, Clock, Users, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { CSSProperties } from "react";
 
 export interface CourseCardProps {
   id: string;
@@ -16,6 +17,7 @@ export interface CourseCardProps {
   instructor: string;
   featured?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function CourseCard({
@@ -30,6 +32,7 @@ export function CourseCard({
   instructor,
   featured = false,
   className,
+  style,
 }: CourseCardProps) {
   // Generate level color based on difficulty
   const levelColor = {
@@ -47,6 +50,7 @@ export function CourseCard({
         featured ? "lg:col-span-2" : "",
         className
       )}
+      style={style}
     >
       <div className="overflow-hidden relative aspect-video">
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
