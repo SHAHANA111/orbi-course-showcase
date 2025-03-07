@@ -10,18 +10,8 @@ interface NavbarProps {
 
 export function Navbar({ className }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,10 +31,7 @@ export function Navbar({ className }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
-        isScrolled 
-          ? "bg-white/90 backdrop-blur-lg shadow-sm border-b border-border/50" 
-          : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 py-4 bg-white shadow-sm border-b border-border/50",
         className
       )}
     >
