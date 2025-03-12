@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -29,9 +30,6 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				orbi: {
-					blue: '#043455',
-					gold: '#BD8939',
-					light: '#E5B161',
 					50: '#f5f7fa',
 					100: '#ebeef3',
 					200: '#d8dfe8',
